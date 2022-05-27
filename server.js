@@ -1,11 +1,18 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser.json({ extended: true }));
 
+const corsOptions = {
+  origin: "fivetranwebooktest.herokuapp.com",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
 app.post(
   "/webhook",
+  cors(corsOptions),
   express.raw({ type: "application/json" }),
   (request, response) => {
     let event = request.body;
