@@ -10,6 +10,7 @@ app.post(
   (request, response) => {
     let event = request.body;
     console.log(request);
+    console.log(request.headers);
     console.log(request.headers.referer);
     console.log(event);
 
