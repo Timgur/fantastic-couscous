@@ -21,7 +21,7 @@ app.post(
     console.log(request.headers.referer);
     console.log(event);
 
-    response.send();
+    response.status(204).send();
   }
 );
 
