@@ -9,7 +9,7 @@ app.post(
   express.raw({ type: "application/json" }),
   (request, response) => {
     let event = request.body;
-
+    console.log(request);
     console.log(event);
 
     response.send();
